@@ -11,7 +11,12 @@
       <ComboBox fx:id="CmbMateriales" layoutX="75.0" layoutY="32.0" prefWidth="150.0" />
       <DatePicker fx:id="CmbFecha" layoutX="75.0" layoutY="104.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="TxtCantidad" layoutX="76.0" layoutY="177.0" />
-      <Button layoutX="50.0" layoutY="261.0" mnemonicParsing="false" onAction="#guardar" text="Aceptar" />
-      <Button fx:id="BtnCancelar" layoutX="186.0" layoutY="261.0" mnemonicParsing="false" text="Cancelar" />
+      <Button layoutX="51.0" layoutY="325.0" mnemonicParsing="false" onAction="#guardar" text="Aceptar" />
+      <Button fx:id="BtnCancelar" layoutX="187.0" layoutY="325.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Label layoutX="75.0" layoutY="81.0" text="Fecha Compra" />
+      <Label layoutX="75.0" layoutY="154.0" text="Cantidad" />
+      <Label layoutX="75.0" layoutY="230.0" text="Precio Unitario" />
+      <TextField fx:id="TxtPrecioUnitario" layoutX="76.0" layoutY="253.0" />
+      <Label layoutX="61.0" layoutY="257.0" text="\$" />
    </children>
 </AnchorPane>

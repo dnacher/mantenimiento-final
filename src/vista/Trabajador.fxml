@@ -18,7 +18,7 @@
       <TextField fx:id="TxtTelefono" layoutX="179.0" layoutY="192.0" />
       <TextField fx:id="TxtMail" layoutX="179.0" layoutY="240.0" />
       <Button layoutX="89.0" layoutY="315.0" mnemonicParsing="false" onAction="#guardarTrabajador" text="Guardar" />
-      <Button layoutX="229.0" layoutY="315.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="BtnCancelar" layoutX="229.0" layoutY="315.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <Label contentDisplay="CENTER" layoutX="141.0" layoutY="22.0" text="Trabajador" textAlignment="CENTER">
          <font>
             <Font size="24.0" />

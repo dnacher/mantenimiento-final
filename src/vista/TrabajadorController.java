@@ -6,13 +6,12 @@ import HibernateControls.TrabajadorControl;
 import Modelo.Trabajador;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class TrabajadorController implements Initializable {
     
@@ -27,6 +26,9 @@ public class TrabajadorController implements Initializable {
 
     @FXML
     private TextField TxtMail;
+    
+    @FXML
+    private Button BtnCancelar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,8 +54,9 @@ public class TrabajadorController implements Initializable {
           }
     }
     
-    public void cancelar(){
-    
+     public void cancelar(){
+        Stage stage = (Stage) BtnCancelar.getScene().getWindow();
+        stage.close();
     }
     
     public void Baja(){

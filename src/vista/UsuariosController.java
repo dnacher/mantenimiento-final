@@ -16,6 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class UsuariosController implements Initializable {
 
@@ -54,6 +55,9 @@ public class UsuariosController implements Initializable {
 
     @FXML
     private ComboBox<Usuario> CmbUsuarios;
+    
+    @FXML
+    private Button BtnCancelar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -67,7 +71,8 @@ public class UsuariosController implements Initializable {
     }
     
     public void cancelar(){
-    
+        Stage stage = (Stage) BtnCancelar.getScene().getWindow();
+        stage.close();
     }
     
     public void cargaCmbAccion(){

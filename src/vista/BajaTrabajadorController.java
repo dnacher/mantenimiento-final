@@ -11,8 +11,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.stage.Stage;
 
 public class BajaTrabajadorController implements Initializable {
 
@@ -21,6 +23,9 @@ public class BajaTrabajadorController implements Initializable {
 
     @FXML
     private DatePicker CmbFechaBaja;
+    
+    @FXML
+    private Button BtnCancelar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +47,10 @@ public class BajaTrabajadorController implements Initializable {
         }  
     }
     
-    public void cancelar(){}
+     public void cancelar(){
+        Stage stage = (Stage) BtnCancelar.getScene().getWindow();
+        stage.close();
+    }
     
     public void actualizaLista(){
         CmbTrabajadores.setItems(null);

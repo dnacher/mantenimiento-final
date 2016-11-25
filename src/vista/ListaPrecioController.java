@@ -28,6 +28,9 @@ public class ListaPrecioController implements Initializable {
 
     @FXML
     private TextField TxtCantidad;
+    
+    @FXML
+    private TextField TxtPrecioUnitario;
 
     @FXML
     private DatePicker CmbFecha;
@@ -56,7 +59,8 @@ public class ListaPrecioController implements Initializable {
             lId.setMaterialIdmaterial(material.getIdmaterial());
             listaPrecio.setId(lId);
             listaPrecio.setFecha(ConfiguracionControl.TraeFecha(CmbFecha.getValue()));
-            listaPrecio.setPrecio(Integer.valueOf(TxtCantidad.getText()));
+            listaPrecio.setPrecio(Integer.valueOf(TxtPrecioUnitario.getText()));
+            listaPrecio.setCantidad(Integer.valueOf(TxtCantidad.getText()));                    
             listaPrecio.setMaterial(material);
             ListaPrecioControl lpc=new ListaPrecioControl();
             lpc.guardarListaPrecio(listaPrecio);

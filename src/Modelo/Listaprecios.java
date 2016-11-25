@@ -14,7 +14,8 @@ public class Listaprecios  implements java.io.Serializable {
      private Material material;
      private Date fecha;
      private Integer precio;
-
+     private Integer cantidad;
+     
     public Listaprecios() {
     }
 
@@ -23,11 +24,12 @@ public class Listaprecios  implements java.io.Serializable {
         this.id = id;
         this.material = material;
     }
-    public Listaprecios(ListapreciosId id, Material material, Date fecha, Integer precio) {
+    public Listaprecios(ListapreciosId id, Material material, Date fecha, Integer precio, Integer cantidad) {
        this.id = id;
        this.material = material;
        this.fecha = fecha;
        this.precio = precio;
+       this.cantidad=cantidad;
     }
    
     public ListapreciosId getId() {
@@ -57,6 +59,14 @@ public class Listaprecios  implements java.io.Serializable {
     
     public void setPrecio(Integer precio) {
         this.precio = precio;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
 

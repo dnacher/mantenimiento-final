@@ -22,6 +22,6 @@
       <PasswordField fx:id="TxtPass2" layoutX="171.0" layoutY="251.0" />
       <ComboBox fx:id="CmbTipoUsuario" layoutX="170.0" layoutY="285.0" prefWidth="150.0" />
       <Button fx:id="BtnGuardar" layoutX="127.0" layoutY="337.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
-      <Button layoutX="238.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="BtnCancelar" layoutX="238.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
    </children>
 </AnchorPane>
