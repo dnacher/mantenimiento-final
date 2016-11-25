@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.LicenciaController">
+   <children>
+      <ComboBox fx:id="CmbTrabajador" layoutX="110.0" layoutY="43.0" prefWidth="150.0" />
+      <DatePicker fx:id="CmbDesde" layoutX="97.0" layoutY="141.0" />
+      <DatePicker fx:id="CmbHasta" layoutX="98.0" layoutY="228.0" />
+      <Label layoutX="32.0" layoutY="145.0" text="Desde" />
+      <Label layoutX="35.0" layoutY="232.0" text="Hasta" />
+      <Button layoutX="84.0" layoutY="302.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+      <Button layoutX="199.0" layoutY="302.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
+</AnchorPane>

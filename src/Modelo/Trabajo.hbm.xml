@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-nov-2016 12:23:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Trabajo" table="trabajo" catalog="mantenimiento" optimistic-lock="version">
+        <id name="idTrabajo" type="int">
+            <column name="idTrabajo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="trabajador" class="Modelo.Trabajador" fetch="select">
+            <column name="trabajador_idTrabajador" not-null="true" />
+        </many-to-one>
+        <many-to-one name="unidad" class="Modelo.Unidad" fetch="select">
+            <column name="Cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <property name="estado" type="java.lang.Integer">
+            <column name="Estado" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" />
+        </property>
+        <property name="duracionEstimada" type="java.lang.Integer">
+            <column name="DuracionEstimada" />
+        </property>
+        <property name="duracionReal" type="java.lang.Integer">
+            <column name="DuracionReal" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="150" />
+        </property>
+        <property name="calificacion" type="java.lang.Integer">
+            <column name="Calificacion" />
+        </property>
+        <set name="materials" table="trabajo_has_material" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Trabajo_idTrabajo" not-null="true" />
+            </key>
+            <many-to-many entity-name="Modelo.Material">
+                <column name="material_idmaterial" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="historialtrabajos" table="historialtrabajo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Trabajo_idTrabajo" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Historialtrabajo" />
+        </set>
+    </class>
+</hibernate-mapping>

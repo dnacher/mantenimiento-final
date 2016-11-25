@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-nov-2016 12:23:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Material" table="material" catalog="mantenimiento" optimistic-lock="version">
+        <id name="idmaterial" type="int">
+            <column name="idmaterial" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="45" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="150" />
+        </property>
+        <property name="fechaCompra" type="date">
+            <column name="FechaCompra" length="10" />
+        </property>
+        <property name="cantidad" type="java.lang.Integer">
+            <column name="Cantidad" />
+        </property>
+        <property name="entrada" type="java.lang.Integer">
+            <column name="Entrada" />
+        </property>
+        <property name="salida" type="java.lang.Integer">
+            <column name="Salida" />
+        </property>
+        <set name="trabajos" table="trabajo_has_material" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="material_idmaterial" not-null="true" />
+            </key>
+            <many-to-many entity-name="Modelo.Trabajo">
+                <column name="Trabajo_idTrabajo" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="listaprecioses" table="listaprecios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="material_idmaterial" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Listaprecios" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.UsuariosController">
+   <children>
+      <ComboBox fx:id="CmbAccion" layoutX="171.0" layoutY="42.0" onAction="#cambioCmb" prefWidth="150.0" />
+      <ComboBox fx:id="CmbUsuarios" layoutX="171.0" layoutY="93.0" prefWidth="150.0" />
+      <Label fx:id="LblAccion" layoutX="109.0" layoutY="46.0" text="Accion" />
+      <Label fx:id="LblUsuarios" layoutX="99.0" layoutY="97.0" text="Usuarios" />
+      <Label fx:id="LblNombre" layoutX="98.0" layoutY="176.0" text="Nombre" />
+      <Separator layoutX="38.0" layoutY="141.0" prefHeight="0.0" prefWidth="339.0" />
+      <Label fx:id="Lblpass" layoutX="83.0" layoutY="215.0" text="Contraseña" />
+      <Label fx:id="LblPass2" layoutX="42.0" layoutY="255.0" text="Repetir Contraseña" />
+      <Label fx:id="LblTipoUsuario" layoutX="76.0" layoutY="289.0" text="Tipo Usuario" />
+      <TextField fx:id="TxtNombre" layoutX="171.0" layoutY="172.0" />
+      <PasswordField fx:id="TxtPass" layoutX="171.0" layoutY="211.0" />
+      <PasswordField fx:id="TxtPass2" layoutX="171.0" layoutY="251.0" />
+      <ComboBox fx:id="CmbTipoUsuario" layoutX="170.0" layoutY="285.0" prefWidth="150.0" />
+      <Button fx:id="BtnGuardar" layoutX="127.0" layoutY="337.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+      <Button layoutX="238.0" layoutY="337.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
+</AnchorPane>

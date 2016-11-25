@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="287.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="vista.BajaTrabajadorController">
+   <children>
+      <ComboBox fx:id="CmbTrabajadores" layoutX="72.0" layoutY="44.0" prefWidth="150.0" />
+      <DatePicker fx:id="CmbFechaBaja" layoutX="60.0" layoutY="120.0" />
+      <Button layoutX="46.0" layoutY="200.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+      <Button layoutX="170.0" layoutY="200.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-nov-2016 12:23:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Listaprecios" table="listaprecios" catalog="mantenimiento" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.ListapreciosId">
+            <key-property name="idlistaPrecios" type="int">
+                <column name="idlistaPrecios" />
+            </key-property>
+            <key-property name="materialIdmaterial" type="int">
+                <column name="material_idmaterial" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="material" class="Modelo.Material" update="false" insert="false" fetch="select">
+            <column name="material_idmaterial" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" />
+        </property>
+        <property name="precio" type="java.lang.Integer">
+            <column name="Precio" />
+        </property>
+    </class>
+</hibernate-mapping>

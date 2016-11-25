@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.MaterialesController">
+   <children>
+      <Label layoutX="43.0" layoutY="99.0" text="Nombre:" />
+      <Label layoutX="27.0" layoutY="139.0" text="Descripcion:" />
+      <Label layoutX="56.0" layoutY="223.0" text="Fecha:" />
+      <Label layoutX="37.0" layoutY="268.0" text="Cantidad:" />
+      <TextField fx:id="TxtNombre" layoutX="126.0" layoutY="95.0" />
+      <TextField fx:id="TxtCantidad" layoutX="126.0" layoutY="264.0" />
+      <DatePicker fx:id="CmbFecha" layoutX="126.0" layoutY="219.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextArea fx:id="TxtDescripcion" layoutX="126.0" layoutY="132.0" prefHeight="71.0" prefWidth="149.0" />
+      <Button layoutX="71.0" layoutY="336.0" mnemonicParsing="false" onAction="#guardar" text="Aceptar" />
+      <Button fx:id="BtnCancelar" layoutX="192.0" layoutY="336.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Label layoutX="107.0" layoutY="28.0" text="Materiales">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="108.0" layoutY="296.0" onAction="#agregarMateriales" text="Agregar Materiales" />
+   </children>
+</AnchorPane>

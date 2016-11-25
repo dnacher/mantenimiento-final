@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-nov-2016 12:23:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Historialtrabajo" table="historialtrabajo" catalog="mantenimiento" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.HistorialtrabajoId">
+            <key-property name="idHistorialTrabajo" type="int">
+                <column name="idHistorialTrabajo" />
+            </key-property>
+            <key-property name="trabajoIdTrabajo" type="int">
+                <column name="Trabajo_idTrabajo" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="trabajo" class="Modelo.Trabajo" update="false" insert="false" fetch="select">
+            <column name="Trabajo_idTrabajo" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="150" />
+        </property>
+    </class>
+</hibernate-mapping>
