@@ -236,13 +236,16 @@ public class MantenimientoFinal extends Application {
     }
     
     private void Login(){
+        ControlVentana cv= new ControlVentana();
         LoginControl lc= new LoginControl();
-            usu=lc.Login(TxtUsuario.getText(), TxtPassword.getText());
+            usu=lc.Login(TxtUsuario.getText(), TxtPassword.getText());            
             if(usu!=null){                    
                 loginCorrecto();
+                cv.creaVentanaNotificacion("Login Correcto", "Login Correcto", 1, "tick");
             }
             else{
                 LblInfo.setText("Login Incorrecto");
+                cv.creaVentanaNotificacionError("Login Incorrecto");
             }
     }
     
