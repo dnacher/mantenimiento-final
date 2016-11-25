@@ -4,6 +4,9 @@ import Control.ConfiguracionControl;
 import Modelo.Trabajador;
 import java.util.Date;
 import java.util.List;
+import java.util.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -48,7 +51,7 @@ public class TrabajadorControl {
        public List<Trabajador> TraeTrabajadoresActivos(){  
            try{
         Session session = SessionConnection.getConnection().useSession();
-        Query query= session.createQuery("from Trabajador trabajador where (trabajador.estado=1) OR (trabajador.estado=3 AND trabajador.fechaFinEstado>:fechaHoy)");
+        Query query= session.createQuery("from Trabajador trabajador where (trabajador.estado=1) OR (trabajador.estado=2 AND trabajador.fechaFinEstado>:fechaHoy)");
         Date hoy=new Date();
         query.setParameter("fechaHoy", hoy);
         List<Trabajador> lista=query.list();
@@ -68,5 +71,11 @@ public class TrabajadorControl {
         List<Trabajador> lista=query.list();
         session.close();        
         return lista;
+    }
+       
+    public ObservableList<Trabajador> TraeTrabajadoresActivosO(){     
+        ObservableList<Trabajador> list;
+        list=FXCollections.observableArrayList(TraeTrabajadoresActivosNoBaja());
+        return list;
     }
 }

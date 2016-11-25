@@ -61,7 +61,7 @@ public class MantenimientoFinal extends Application {
         RadialMenuItem Material= new RadialMenuItem();      
         RadialMenuItem Calendar= new RadialMenuItem();
         
-        RadialMenuItem ProcesosMasivos= new RadialMenuItem();
+        RadialMenuItem Trabajo= new RadialMenuItem();
    
     @Override public void init() {       
         initRadialMenuPane();        
@@ -78,7 +78,7 @@ public class MantenimientoFinal extends Application {
         Calendar=RadialMenuItemBuilder.create().symbol(SymbolType.CALENDAR).tooltip("Importacion/Exportacion").size(48).build();
         
         
-        ProcesosMasivos=RadialMenuItemBuilder.create().symbol(SymbolType.BRUSH).tooltip("Procesos Masivos").size(48).build();               
+        Trabajo=RadialMenuItemBuilder.create().symbol(SymbolType.BRUSH).tooltip("Trabajo").size(48).build();               
     }
     
      public List<RadialMenuItem> DevuelveItems(){        
@@ -91,7 +91,7 @@ public class MantenimientoFinal extends Application {
         list.add(Material);
         list.add(Calendar);
         
-        list.add(ProcesosMasivos);   
+        list.add(Trabajo);   
         return list;
     }
     
@@ -131,17 +131,11 @@ public class MantenimientoFinal extends Application {
         creaMensajeItemsMenuEntra(Material,"Materiales" );
         creaMensajeItemsMenuSale(Material);
         
-        
-        
-             
-        
         creaMensajeItemsMenuEntra(Calendar,"Calendar" );
         creaMensajeItemsMenuSale(Calendar);
         
-        
-        
-        creaMensajeItemsMenuEntra(ProcesosMasivos,"Procesos Masivos" );
-        creaMensajeItemsMenuSale(ProcesosMasivos);
+        creaMensajeItemsMenuEntra(Trabajo,"Trabajo" );
+        creaMensajeItemsMenuSale(Trabajo);
 
     }
     
@@ -216,10 +210,11 @@ public class MantenimientoFinal extends Application {
             }
         });    
         
-        ProcesosMasivos.setOnMousePressed(mouseEvent -> {
+        Trabajo.setOnMousePressed(mouseEvent -> {
             try {
-                cv.crearVentanasinCSS("CargarMasivas", "Cargar Masivas");
+                cv.crearVentanasinCSS("Trabajo", "Trabajo");
             } catch (IOException ex) {
+                System.out.println(ex.getMessage());
                 cv.creaVentanaNotificacionError(ex.getMessage());
             }});
         

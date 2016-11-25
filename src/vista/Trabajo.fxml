@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.TrabajoController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.TrabajoController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="352.0" prefWidth="576.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Usuario">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="CmbBlock" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+                        <ComboBox fx:id="CmbTorre" layoutX="14.0" layoutY="49.0" prefWidth="150.0" />
+                        <Button layoutX="176.0" layoutY="14.0" mnemonicParsing="false" onAction="#Mostrar" prefHeight="58.0" prefWidth="89.0" text="Mostrar" />
+                        <Label layoutX="288.0" layoutY="18.0" text="Nombre" />
+                        <Label layoutX="287.0" layoutY="41.0" text="Block" />
+                        <Label layoutX="287.0" layoutY="64.0" text="Torre" />
+                        <Label layoutX="288.0" layoutY="87.0" text="Apto." />
+                        <Label fx:id="LblApto" layoutX="346.0" layoutY="88.0" prefHeight="17.0" prefWidth="211.0" textFill="#0661d0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="LblTorre" layoutX="345.0" layoutY="65.0" prefWidth="211.0" textFill="#0661d0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="LblBlock" layoutX="345.0" layoutY="42.0" prefWidth="211.0" textFill="#0661d0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="LblNombre" layoutX="346.0" layoutY="19.0" prefWidth="211.0" textFill="#0661d0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <TableView fx:id="TblUsuarios" layoutX="14.0" layoutY="105.0" onMouseClicked="#cargaLbl" prefHeight="200.0" prefWidth="551.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Trabajo">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="576.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Descripcion" />
+                        <TextArea fx:id="TxtDescripcion" layoutX="146.0" layoutY="14.0" prefHeight="172.0" prefWidth="409.0" />
+                        <Label layoutX="14.0" layoutY="198.0" text="Trabajador" />
+                        <ComboBox fx:id="CmbTrabajador" layoutX="147.0" layoutY="195.0" prefHeight="25.0" prefWidth="175.0" />
+                        <DatePicker fx:id="CmbFecha" layoutX="146.0" layoutY="230.0" />
+                        <Label layoutX="14.0" layoutY="234.0" text="Fecha Visita" />
+                        <Label layoutX="14.0" layoutY="269.0" text="Duracion Aprox (hs)" />
+                        <TextField fx:id="TxtDuracion" layoutX="147.0" layoutY="265.0" prefHeight="25.0" prefWidth="175.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Materiales">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="CmbMaterial" layoutX="88.0" layoutY="14.0" prefWidth="150.0" />
+                        <Label layoutX="24.0" layoutY="18.0" text="Material" />
+                        <TextField fx:id="TxtCantidad" layoutX="342.0" layoutY="14.0" />
+                        <Label layoutX="269.0" layoutY="18.0" text="Cantidad" />
+                        <Button layoutX="511.0" layoutY="7.0" mnemonicParsing="false" onAction="#agregarMaterial" text="+">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="TblMateriales" layoutX="11.0" layoutY="56.0" prefHeight="259.0" prefWidth="554.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="27.0" layoutY="366.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+      <Button fx:id="BtnCancelar" layoutX="123.0" layoutY="366.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
 </AnchorPane>

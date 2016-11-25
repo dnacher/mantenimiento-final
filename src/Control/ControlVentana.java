@@ -20,7 +20,8 @@ public class ControlVentana {
     public void crearVentanasinCSS(String nombreVentana, String tituloVentana) throws IOException{
 		Stage primaryStage= new Stage();
                 primaryStage.getIcons().add(new Image("/vista/imagenes/convenios.png"));
-		Pane root= FXMLLoader.load(getClass().getResource("/vista/" + nombreVentana + ".fxml"));		
+                String str="/vista/" + nombreVentana + ".fxml";
+		Pane root= FXMLLoader.load(getClass().getResource(str));		
 		Scene scene= new Scene(root);		
 		primaryStage.setTitle(tituloVentana);
 		primaryStage.setScene(scene);

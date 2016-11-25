@@ -87,23 +87,16 @@ public class UnidadesControl {
         return permitido;
     }
     
-    public List<Unidad> TraeUnidadesXBlockTorreNoPago(String block, int torre){
+    public List<Unidad> TraeUnidadesXBlockTorre(String block, int torre){
         ControlUtil cu=new ControlUtil();
         List<Unidad> lista=new ArrayList<>();       
         Session session = SessionConnection.getConnection().useSession();
         try{
         Query query= session.createQuery("SELECT unidad FROM Unidad unidad "
                                        + "WHERE Block=:block "
-                                       + "AND Torre=:torre "
-                                       + "AND unidad.idUnidad NOT IN (SELECT gastoscomunes.unidad "
-                                                               + "FROM Gastoscomunes gastoscomunes "
-                                                               + "WHERE gastoscomunes.periodo=:periodo "
-                                                               + "AND gastoscomunes.estado=:est)");            
+                                       + "AND Torre=:torre");            
         query.setParameter("block", block);
-        query.setParameter("torre", torre);
-        query.setParameter("periodo", cu.devuelvePeriodoActual());
-        //estado 2 pago al estar en el "not in" trae los que estan pagos
-        query.setParameter("est", 2);
+        query.setParameter("torre", torre);    
         lista=query.list();           
         session.close();       
         }
